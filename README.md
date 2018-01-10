@@ -1,11 +1,14 @@
-# Spryker Commerce OS
+# ProductSetStorage Module
+[![Build Status](https://travis-ci.org/spryker/ProductSetStorage.svg)](https://travis-ci.org/spryker/ProductSetStorage)
+[![Coverage Status](https://coveralls.io/repos/github/spryker/ProductSetStorage/badge.svg)](https://coveralls.io/github/spryker/ProductSetStorage)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spryker/ProductSetStorage/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spryker/ProductSetStorage/?branch=master)
 
-## Core Modules
+## Installation
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spryker/spryker-core/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spryker/spryker-core/?branch=master)
+```
+composer require spryker/product-set-storage
+```
 
-### Links
-- **[Spryker Documentation](https://academy.spryker.com/)**
-- [Spryker Architecture-Sniffer](https://github.com/spryker/architecture-sniffer)
-- [Spryker Code-Sniffer](https://github.com/spryker/code-sniffer)
-- [Spryker Code-Generator](https://github.com/spryker/code-generator)
+## Documentation
+
+[Spryker Documentation](https://spryker.github.io)
