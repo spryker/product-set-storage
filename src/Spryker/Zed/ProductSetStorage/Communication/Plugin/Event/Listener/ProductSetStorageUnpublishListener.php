@@ -7,7 +7,6 @@
 
 namespace Spryker\Zed\ProductSetStorage\Communication\Plugin\Event\Listener;
 
-use Orm\Zed\Url\Persistence\Map\SpyUrlTableMap;
 use Spryker\Zed\Event\Dependency\Plugin\EventBulkHandlerInterface;
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 use Spryker\Zed\PropelOrm\Business\Transaction\DatabaseTransactionHandlerTrait;
@@ -18,11 +17,13 @@ use Spryker\Zed\PropelOrm\Business\Transaction\DatabaseTransactionHandlerTrait;
  * @method \Spryker\Zed\ProductSetStorage\Business\ProductSetStorageFacadeInterface getFacade()
  * @method \Spryker\Zed\ProductSetStorage\ProductSetStorageConfig getConfig()
  */
-class ProductSetUrlStorageListener extends AbstractPlugin implements EventBulkHandlerInterface
+class ProductSetStorageUnpublishListener extends AbstractPlugin implements EventBulkHandlerInterface
 {
     use DatabaseTransactionHandlerTrait;
 
     /**
+     * {@inheritdoc}
+     *
      * @api
      *
      * @param \Generated\Shared\Transfer\EventEntityTransfer[] $eventTransfers
@@ -33,30 +34,8 @@ class ProductSetUrlStorageListener extends AbstractPlugin implements EventBulkHa
     public function handleBulk(array $eventTransfers, $eventName)
     {
         $this->preventTransaction();
-        $productSetIds = $this->getValidProductSetIds($eventTransfers);
+        $productSetIds = $this->getFactory()->getEventBehaviorFacade()->getEventTransferIds($eventTransfers);
 
-        if (empty($productSetIds)) {
-            return;
-        }
-
-        $this->getFacade()->publish($productSetIds);
-    }
-
-    /**
-     * @param array $eventTransfers
-     *
-     * @return array
-     */
-    protected function getValidProductSetIds(array $eventTransfers)
-    {
-        $validEventTransfers = $this->getFactory()->getEventBehaviorFacade()->getEventTransfersByModifiedColumns(
-            $eventTransfers,
-            [
-                SpyUrlTableMap::COL_URL,
-                SpyUrlTableMap::COL_FK_RESOURCE_PRODUCT_SET,
-            ]
-        );
-
-        return $this->getFactory()->getEventBehaviorFacade()->getEventTransferForeignKeys($validEventTransfers, SpyUrlTableMap::COL_FK_RESOURCE_PRODUCT_SET);
+        $this->getFacade()->unpublish($productSetIds);
     }
 }
