@@ -11,6 +11,8 @@ use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 use Spryker\Zed\SitemapExtension\Dependency\Plugin\SitemapDataProviderPluginInterface;
 
 /**
+ * @deprecated Use {@link \Spryker\Zed\ProductSetStorage\Communication\Plugin\Sitemap\ProductSetSitemapGeneratorDataProviderPlugin} instead.
+ *
  * @method \Spryker\Zed\ProductSetStorage\Persistence\ProductSetStorageRepositoryInterface getRepository()
  * @method \Spryker\Zed\ProductSetStorage\ProductSetStorageConfig getConfig()
  * @method \Spryker\Zed\ProductSetStorage\Business\ProductSetStorageFacadeInterface getFacade()
