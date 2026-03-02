@@ -9,8 +9,5 @@ namespace Spryker\Zed\ProductSetStorage\Dependency\Facade;
 
 interface ProductSetStorageToProductImageFacadeInterface
 {
-    /**
-     * @return bool
-     */
     public function isProductImageAlternativeTextEnabled(): bool;
 }

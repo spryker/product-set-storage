@@ -57,9 +57,6 @@ class ProductSetStorageListenerWithAlternativeTextsTest extends Unit
      */
     protected LocaleTransfer $localeTransfer;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -67,9 +64,6 @@ class ProductSetStorageListenerWithAlternativeTextsTest extends Unit
         $this->localeTransfer = $this->tester->haveLocale([LocaleTransfer::LOCALE_NAME => 'de_DE']);
     }
 
-    /**
-     * @return void
-     */
     public function testProductSetProductImageSetStorageListenerWithAltTexts(): void
     {
         // Arrange
@@ -121,9 +115,6 @@ class ProductSetStorageListenerWithAlternativeTextsTest extends Unit
         $this->assertSame($largeAltTextTranslation, $productSetImages[0][static::KEY_ALT_TEXT_LARGE]);
     }
 
-    /**
-     * @return void
-     */
     public function testProductSetProductImageSetStorageListenerWithAltTextsWithoutTranslations(): void
     {
         // Arrange
@@ -160,9 +151,6 @@ class ProductSetStorageListenerWithAlternativeTextsTest extends Unit
         $this->assertNull($productSetImages[0][static::KEY_ALT_TEXT_LARGE]);
     }
 
-    /**
-     * @return void
-     */
     public function testProductSetProductImageSetStorageListenerWithAltTextsWithDisabledConfig(): void
     {
         // Arrange

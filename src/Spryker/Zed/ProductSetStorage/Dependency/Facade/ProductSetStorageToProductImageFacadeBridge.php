@@ -22,9 +22,6 @@ class ProductSetStorageToProductImageFacadeBridge implements ProductSetStorageTo
         $this->productImageFacade = $productImageFacade;
     }
 
-    /**
-     * @return bool
-     */
     public function isProductImageAlternativeTextEnabled(): bool
     {
         return $this->productImageFacade->isProductImageAlternativeTextEnabled();

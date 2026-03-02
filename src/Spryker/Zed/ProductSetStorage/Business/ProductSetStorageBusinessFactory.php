@@ -37,9 +37,6 @@ class ProductSetStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductSetStorage\Business\Expander\ProductSetDataStorageExpanderInterface|null
-     */
     public function createProductSetDataStorageExpander(): ?ProductSetDataStorageExpanderInterface
     {
         if (!$this->getProductImageFacade()->isProductImageAlternativeTextEnabled()) {
@@ -51,9 +48,6 @@ class ProductSetStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductSetStorage\Business\Reader\GlossaryReaderInterface|null
-     */
     public function createGlossaryReader(): ?GlossaryReaderInterface
     {
         if (!$this->getProductImageFacade()->isProductImageAlternativeTextEnabled()) {
@@ -65,9 +59,6 @@ class ProductSetStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductSetStorage\Dependency\Facade\ProductSetStorageToGlossaryFacadeInterface
-     */
     public function getGlossaryFacade(): ProductSetStorageToGlossaryFacadeInterface
     {
         $this->assertProductImageAlternativeTextEnabled();
@@ -75,9 +66,6 @@ class ProductSetStorageBusinessFactory extends AbstractBusinessFactory
         return $this->getProvidedDependency(ProductSetStorageDependencyProvider::FACADE_GLOSSARY);
     }
 
-    /**
-     * @return \Spryker\Zed\ProductSetStorage\Dependency\Facade\ProductSetStorageToProductImageFacadeInterface
-     */
     public function getProductImageFacade(): ProductSetStorageToProductImageFacadeInterface
     {
         return $this->getProvidedDependency(ProductSetStorageDependencyProvider::FACADE_PRODUCT_IMAGE);

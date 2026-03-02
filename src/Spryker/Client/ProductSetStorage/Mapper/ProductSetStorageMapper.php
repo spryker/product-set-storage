@@ -80,11 +80,6 @@ class ProductSetStorageMapper implements ProductSetStorageMapperInterface
         return $productSetDataStorageTransfer;
     }
 
-    /**
-     * @param array $productSetStorageData
-     *
-     * @return array
-     */
     private function formatProductSetCollectorData(array $productSetStorageData): array
     {
         $productSetStorageData['product_abstract_ids'] = $productSetStorageData['id_product_abstracts'];

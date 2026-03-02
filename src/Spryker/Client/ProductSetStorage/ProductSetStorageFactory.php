@@ -50,9 +50,6 @@ class ProductSetStorageFactory extends AbstractFactory
         return new ProductSetStorageMapper();
     }
 
-    /**
-     * @return \Spryker\Client\ProductSetStorage\Dependency\Client\ProductSetStorageToStoreClientInterface
-     */
     public function getStoreClient(): ProductSetStorageToStoreClientInterface
     {
         return $this->getProvidedDependency(ProductSetStorageDependencyProvider::CLIENT_STORE);

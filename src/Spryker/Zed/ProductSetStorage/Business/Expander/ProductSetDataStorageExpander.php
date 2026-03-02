@@ -58,9 +58,6 @@ class ProductSetDataStorageExpander implements ProductSetDataStorageExpanderInte
      */
     protected const KEY_LOCALE_NAME = 'locale_name';
 
-    /**
-     * @param \Spryker\Zed\ProductSetStorage\Business\Reader\GlossaryReaderInterface $glossaryReader
-     */
     public function __construct(protected GlossaryReaderInterface $glossaryReader)
     {
     }

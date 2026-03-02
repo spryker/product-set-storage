@@ -57,11 +57,6 @@ class ProductSetStorageDependencyProvider extends AbstractBundleDependencyProvid
      */
     public const FACADE_PRODUCT_IMAGE = 'FACADE_PRODUCT_IMAGE';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = $this->addGlossaryFacade($container);
@@ -102,11 +97,6 @@ class ProductSetStorageDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addGlossaryFacade(Container $container): Container
     {
         $container->set(static::FACADE_GLOSSARY, function (Container $container) {
@@ -121,11 +111,6 @@ class ProductSetStorageDependencyProvider extends AbstractBundleDependencyProvid
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductImageFacade(Container $container): Container
     {
         $container->set(static::FACADE_PRODUCT_IMAGE, function (Container $container) {

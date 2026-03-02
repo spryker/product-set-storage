@@ -32,11 +32,6 @@ class ProductSetStorageWriter implements ProductSetStorageWriterInterface
      */
     protected $superAttributes = [];
 
-    /**
-     * @param \Spryker\Zed\ProductSetStorage\Persistence\ProductSetStorageQueryContainerInterface $queryContainer
-     * @param bool $isSendingToQueue
-     * @param \Spryker\Zed\ProductSetStorage\Business\Expander\ProductSetDataStorageExpanderInterface|null $productSetDataStorageExpander
-     */
     public function __construct(
         protected ProductSetStorageQueryContainerInterface $queryContainer,
         protected bool $isSendingToQueue = true,

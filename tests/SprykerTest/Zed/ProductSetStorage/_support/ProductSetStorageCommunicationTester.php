@@ -51,9 +51,6 @@ class ProductSetStorageCommunicationTester extends Actor
      */
     public const PROJECT_SUITE = 'suite';
 
-    /**
-     * @return bool
-     */
     public function isSuiteProject(): bool
     {
         if (getenv(static::PARAM_PROJECT) === static::PROJECT_SUITE) {
@@ -63,9 +60,6 @@ class ProductSetStorageCommunicationTester extends Actor
         return false;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ProductSetTransfer
-     */
     public function generateProductSetTransfer(): ProductSetTransfer
     {
         $localizedProductSetTransfer = (new LocalizedProductSetBuilder())
@@ -106,11 +100,6 @@ class ProductSetStorageCommunicationTester extends Actor
         return $this->getProductSetFacade()->createProductSet($productSetTransfer);
     }
 
-    /**
-     * @param int $sortOrder
-     *
-     * @return \Generated\Shared\Transfer\ProductImageTransfer
-     */
     public function createProductImageTransferWithSortOrder(int $sortOrder): ProductImageTransfer
     {
         /** @var \Generated\Shared\Transfer\ProductImageTransfer $productImageTransfer */
@@ -121,21 +110,11 @@ class ProductSetStorageCommunicationTester extends Actor
         return $productImageTransfer;
     }
 
-    /**
-     * @param int $fkProductSet
-     *
-     * @return void
-     */
     public function deleteProductSetStorageByFkProductSet(int $fkProductSet): void
     {
         SpyProductSetStorageQuery::create()->filterByFkProductSet($fkProductSet)->delete();
     }
 
-    /**
-     * @param int $idProductSet
-     *
-     * @return array
-     */
     public function getProductSetImages(int $idProductSet): array
     {
         $productSetStorage = SpyProductSetStorageQuery::create()->findOneByFkProductSet($idProductSet);
@@ -145,11 +124,6 @@ class ProductSetStorageCommunicationTester extends Actor
         return $productSetImages;
     }
 
-    /**
-     * @param array $productImages
-     *
-     * @return void
-     */
     public function assertSortingByIdProductImageSetToProductImage(array $productImages): void
     {
         $idProductImageSetToProductImagePrevious = 0;
@@ -164,11 +138,6 @@ class ProductSetStorageCommunicationTester extends Actor
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductSetTransfer $productSetTransfer
-     *
-     * @return void
-     */
     public function deleteProductSet(ProductSetTransfer $productSetTransfer): void
     {
         $this->getProductSetFacade()->deleteProductSet($productSetTransfer);
@@ -196,9 +165,6 @@ class ProductSetStorageCommunicationTester extends Actor
             ->handleBulk($eventTransfers, ProductSetEvents::PRODUCT_SET_PUBLISH);
     }
 
-    /**
-     * @return \Spryker\Zed\ProductSet\Business\ProductSetFacadeInterface
-     */
     protected function getProductSetFacade(): ProductSetFacadeInterface
     {
         return $this->getLocator()->productSet()->facade();

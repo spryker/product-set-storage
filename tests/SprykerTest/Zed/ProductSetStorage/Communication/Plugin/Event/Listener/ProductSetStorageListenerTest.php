@@ -61,9 +61,6 @@ class ProductSetStorageListenerTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -73,9 +70,6 @@ class ProductSetStorageListenerTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testProductSetStorageListenerStoreData(): void
     {
         // Prepare
@@ -96,9 +90,6 @@ class ProductSetStorageListenerTest extends Unit
         $this->assertProductSetStorage($productSetStorageCount);
     }
 
-    /**
-     * @return void
-     */
     public function testProductSetStoragePublishListener(): void
     {
         // Prepare
@@ -119,9 +110,6 @@ class ProductSetStorageListenerTest extends Unit
         $this->assertProductSetStorage($productSetStorageCount);
     }
 
-    /**
-     * @return void
-     */
     public function testProductSetStorageUnpublishListener(): void
     {
         // Arrange
@@ -158,9 +146,6 @@ class ProductSetStorageListenerTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testProductAbstractProductSetStorageListenerStoreData(): void
     {
         // Prepare
@@ -183,9 +168,6 @@ class ProductSetStorageListenerTest extends Unit
         $this->assertProductSetStorage($productSetStorageCount);
     }
 
-    /**
-     * @return void
-     */
     public function testProductSetDataStorageListenerStoreData(): void
     {
         // Prepare
@@ -208,9 +190,6 @@ class ProductSetStorageListenerTest extends Unit
         $this->assertProductSetStorage($productSetStorageCount);
     }
 
-    /**
-     * @return void
-     */
     public function testProductSetProductImageStorageListenerStoreData(): void
     {
         // Prepare
@@ -235,9 +214,6 @@ class ProductSetStorageListenerTest extends Unit
         $this->assertGreaterThanOrEqual($beforeCount, $productSetStorageCount);
     }
 
-    /**
-     * @return void
-     */
     public function testProductSetProductImageSetStorageListenerStoreData(): void
     {
         // Prepare
@@ -260,9 +236,6 @@ class ProductSetStorageListenerTest extends Unit
         $this->assertProductSetStorage($productSetStorageCount);
     }
 
-    /**
-     * @return void
-     */
     public function testProductSetProductImageSetImageStorageListenerStoreData(): void
     {
         // Prepare
@@ -286,9 +259,6 @@ class ProductSetStorageListenerTest extends Unit
         $this->assertGreaterThanOrEqual($beforeCount, $productSetStorageCount);
     }
 
-    /**
-     * @return void
-     */
     public function testProductSetUrlStorageListenerStoreData(): void
     {
         // Prepare
@@ -314,9 +284,6 @@ class ProductSetStorageListenerTest extends Unit
         $this->assertProductSetStorage($productSetStorageCount);
     }
 
-    /**
-     * @return void
-     */
     public function testProductSetProductImageSetStorageListenerSortsImagesBySortOrderAsc(): void
     {
         $productImageTransferSortedSecond = $this->tester->createProductImageTransferWithSortOrder(1);
@@ -351,9 +318,6 @@ class ProductSetStorageListenerTest extends Unit
         $this->assertSame($productImageTransferSortedThird->getIdProductImage(), $productSetImages[2]['id_product_image']);
     }
 
-    /**
-     * @return void
-     */
     public function testProductSetProductImageSetStorageListenerSortsImagesByIdProductImageSetToProductImageAsc(): void
     {
         $productSetTransfer = $this->tester->createProductSetWithProductImages([
@@ -382,9 +346,6 @@ class ProductSetStorageListenerTest extends Unit
         $this->tester->deleteProductSet($productSetTransfer);
     }
 
-    /**
-     * @return \Spryker\Zed\ProductSetStorage\Business\ProductSetStorageFacade
-     */
     protected function getProductSetStorageFacade(): ProductSetStorageFacade
     {
         $factory = new ProductSetStorageBusinessFactory();
@@ -396,11 +357,6 @@ class ProductSetStorageListenerTest extends Unit
         return $facade;
     }
 
-    /**
-     * @param int $beforeCount
-     *
-     * @return void
-     */
     protected function assertProductSetStorage(int $beforeCount): void
     {
         $productSetStorageCount = SpyProductSetStorageQuery::create()->count();

@@ -180,11 +180,6 @@ class ProductSetStorageQueryContainer extends AbstractQueryContainer implements 
         return $query;
     }
 
-    /**
-     * @param \Orm\Zed\ProductSet\Persistence\SpyProductSetDataQuery $productSetDataQuery
-     *
-     * @return \Orm\Zed\ProductSet\Persistence\SpyProductSetDataQuery
-     */
     protected function sortProductImageSetToProductImageQuery(
         SpyProductSetDataQuery $productSetDataQuery
     ): SpyProductSetDataQuery {

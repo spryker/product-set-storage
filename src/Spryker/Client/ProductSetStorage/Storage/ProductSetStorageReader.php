@@ -32,11 +32,6 @@ class ProductSetStorageReader implements ProductSetStorageReaderInterface
      */
     protected $productSetStorageMapper;
 
-    /**
-     * @param \Spryker\Client\ProductSetStorage\Dependency\Client\ProductSetStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\ProductSetStorage\Dependency\Service\ProductSetStorageToSynchronizationServiceInterface $synchronizationService
-     * @param \Spryker\Client\ProductSetStorage\Mapper\ProductSetStorageMapperInterface $productSetStorageMapper
-     */
     public function __construct(
         ProductSetStorageToStorageClientInterface $storageClient,
         ProductSetStorageToSynchronizationServiceInterface $synchronizationService,

@@ -43,9 +43,6 @@ class ProductSetStoragePersistenceFactory extends AbstractPersistenceFactory
         return $this->getProvidedDependency(ProductSetStorageDependencyProvider::QUERY_CONTAINER_PRODUCT_IMAGE);
     }
 
-    /**
-     * @return \Spryker\Zed\ProductSetStorage\Persistence\Propel\Mapper\ProductSetStorageMapper
-     */
     public function createProductSetStorageMapper(): ProductSetStorageMapper
     {
         return new ProductSetStorageMapper();

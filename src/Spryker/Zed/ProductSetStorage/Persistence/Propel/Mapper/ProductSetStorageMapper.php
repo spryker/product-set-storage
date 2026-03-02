@@ -46,12 +46,6 @@ class ProductSetStorageMapper
         return $sitemapUrlTransfers;
     }
 
-    /**
-     * @param \Orm\Zed\ProductSetStorage\Persistence\SpyProductSetStorage $productSetStorageEntity
-     * @param string $storeName
-     *
-     * @return \Generated\Shared\Transfer\SitemapUrlTransfer
-     */
     protected function mapProductSetStorageEntityToSitemapUrlTransfer(SpyProductSetStorage $productSetStorageEntity, string $storeName): SitemapUrlTransfer
     {
         return (new SitemapUrlTransfer())

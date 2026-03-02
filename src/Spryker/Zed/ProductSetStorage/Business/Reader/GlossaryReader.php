@@ -12,9 +12,6 @@ use Spryker\Zed\ProductSetStorage\Dependency\Facade\ProductSetStorageToGlossaryF
 
 class GlossaryReader implements GlossaryReaderInterface
 {
-    /**
-     * @param \Spryker\Zed\ProductSetStorage\Dependency\Facade\ProductSetStorageToGlossaryFacadeInterface $glossaryFacade
-     */
     public function __construct(protected ProductSetStorageToGlossaryFacadeInterface $glossaryFacade)
     {
     }
