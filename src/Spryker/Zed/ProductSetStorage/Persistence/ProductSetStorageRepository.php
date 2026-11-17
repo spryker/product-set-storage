@@ -58,7 +58,6 @@ class ProductSetStorageRepository extends AbstractRepository implements ProductS
             ->orderByIdProductSetStorage()
             ->limit($limit)
             ->offset($offset);
-        $sitemapUrlTransfers = [];
         $productSetStorageMapper = $this->getFactory()->createProductSetStorageMapper();
 
         do {
